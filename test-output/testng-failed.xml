@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Parameterization Test Suite]">
+  <test thread-count="5" name="Testing Parameterization(failed)">
+    <parameter name="appURL" value="http://apps.qa2qe.cognizant.e-box.co.in/Cargo_Shipping_Cost"/>
+    <parameter name="browserType" value="chrome"/>
+    <classes>
+      <class name="testpakage.WebTestCustomer">
+        <methods>
+          <include name="verifyTextForAir"/>
+          <include name="setUp"/>
+          <include name="verifyTextForRoad"/>
+          <include name="tearDown"/>
+          <include name="verifyTextForShip"/>
+        </methods>
+      </class> <!-- testpakage.WebTestCustomer -->
+    </classes>
+  </test> <!-- Testing Parameterization(failed) -->
+</suite> <!-- Failed suite [Parameterization Test Suite] -->

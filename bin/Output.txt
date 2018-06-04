@@ -1,0 +1,10 @@
+
+Scenario one :Registered Succesfully
+Name :testuserOne 21
+Age :21
+Address :London
+PhoneNumber :789456123
+Email :xyz@xyz.com
+ 
+Scenario Two: Customer Form
+Error message for second registration :Enter a valid email id

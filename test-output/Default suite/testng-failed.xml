@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <parameter name="appURL" value="http://apps.qa2qe.cognizant.e-box.co.in/Cargo_Shipping_Cost"/>
+  <parameter name="browserType" value="chrome"/>
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="testpakage.WebTestCustomer">
+        <methods>
+          <include name="verifyTextForAir"/>
+          <include name="setUp"/>
+          <include name="verifyTextForRoad"/>
+          <include name="tearDown"/>
+          <include name="verifyTextForShip"/>
+        </methods>
+      </class> <!-- testpakage.WebTestCustomer -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
