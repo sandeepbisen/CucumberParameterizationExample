@@ -1,30 +1,21 @@
 Feature: Customer Registration
 
-@PositiveScenario
   Scenario Outline: Validation of the registration form 
     Given I am able to access customer registration form
-    When I am able to fill <customerName>,<age>,<address>, <phoneNumber> and <email> in customer registration form and Submit
-    Then I should able to see the expected Result
+    When I try to fill in "<customerName>" <age> "<address>" <phoneNumber> and "<email>"
+    And I click on Submit
+    Then I should be able to navigate to Registered Succesfully page with customer details for "<customerName>"
     Examples: 
-    | customerName  | age | address | phoneNumber  | email     		  |
-    | User One      | 30  | Pune  	| 111111111    |test1@gmail.com |
-    | User Two      | 23  | Mumbai  | 222222222    |test2@xyz.com 	|    
+    | customerName  | age | address | phoneNumber  | email     |
+    | testuserOne   | 21  | London  | 789456123    |xyz@xyz.com|
     
-@NegativeScenario
-  Scenario Outline: Validation of the registration form 
+    Scenario Outline: Validation of the registration form 
     Given I am able to access customer registration form
-    When I am able to fill <customerName>,<age>,<address>, <phoneNumber> and <email> in customer registration form and Submit
-    Then I should able to see the expected Result
+    When I try to fill in "<customerName>" <age> "<address>" <phoneNumber> and "<email>"
+    And I click on Submit
+    Then I should be able to see error for "<customerName>"
     Examples: 
-    | customerName  | age | address | phoneNumber  | email     		 |
-    | User Three    | 30  | Pune  	| 333333333    |test3gmail.com |
-    | User Four     | 23  | Mumbai  | Test		     |test4@xyz.com  | 
+    | customerName  | age | address | phoneNumber  | email     |
+    | testuserTwo   | 23  | Paris   | 789456128    |xvyxvy.com |
     
-@ResetScenario
-  Scenario Outline: Validation of the registration form 
-    Given I am able to access customer registration form
-    When I am able to fill <customerName>,<age>,<address>, <phoneNumber> and <email> in customer registration form and Submit
-    Then I should able to see the expected Result
-    Examples: 
-    | customerName  | age | address | phoneNumber  | email     		  |
-    | User Five     | 30  | Pune  	| 555555555    |test5@gmail.com |      
+      

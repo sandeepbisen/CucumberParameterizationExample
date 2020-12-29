@@ -1,18 +1,20 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name = "Parameterization Test Suite">
-
-   <test name = "Testing Parameterization">
-   	<parameter name="browserType" value="chrome"/>
-	<parameter name="appURL" value="http://apps.qa2qe.cognizant.e-box.co.in/Cargo_Shipping_Cost"/>
-      <classes>
-         <class name = "testpakage.WebTestCustomer">
-         	<!--<methods>
-        		<include name="verifyTextForAir" />
-        		<include name="verifyTextForShip" />
-      		</methods>-->
-         </class>
-      </classes>
-   </test>
+<suite name = "Page Object Model in Selenium">
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+		<listener class-name="testpakage.ListenerTest" />
+		 <listener class-name="testpakage.CustomReporter" />
+	</listeners>
+	<test name="TestNG logs sample" preserve-order="true">
+		<classes>
+			<class name="testpakage.ShipmentTest">
+				<methods>
+					<include name="displayShipmentValues" />
+				</methods>
+			</class>
+		</classes>
+	</test>
 </suite>  

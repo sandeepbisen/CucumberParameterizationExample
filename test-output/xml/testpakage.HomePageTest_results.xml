@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Page Object Model in Selenium - LC"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="1.776">
+  <properties />
+  
+  
+            <testcase name="testHomePage" time="1.776" classname="testpakage.HomePageTest" />
+      
+</testsuite>

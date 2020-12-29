@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Page Object Model in Selenium]">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    <listener class-name="testpakage.ListenerTest"/>
+    <listener class-name="testpakage.CustomReporter"/>
+  </listeners>
+  <test name="TestNG logs sample(failed)">
+    <classes>
+      <class name="testpakage.WebTest1">
+        <methods>
+          <include name="deleteAddressBook"/>
+          <include name="updateAddressBook"/>
+          <include name="driverSetUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- testpakage.WebTest1 -->
+    </classes>
+  </test> <!-- TestNG logs sample(failed) -->
+</suite> <!-- Failed suite [Page Object Model in Selenium] -->

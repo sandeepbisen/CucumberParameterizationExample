@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Page Object Model in Selenium - LC"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="1.323">
+  <properties />
+  
+  
+            <testcase name="test_Commodity_Details" time="1.323" classname="testpakage.TestCommodityForm" />
+      
+</testsuite>

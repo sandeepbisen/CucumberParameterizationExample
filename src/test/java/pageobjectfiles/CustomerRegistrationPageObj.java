@@ -5,29 +5,30 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import basesetup.TestBaseSetup;
+import basesetup.DriverSetup;
 
-public class CustomerRegistrationPageObj extends TestBaseSetup{
+public class CustomerRegistrationPageObj {
+	
+	WebDriver driver;
 	
 	public CustomerRegistrationPageObj(WebDriver driver) {
-		//this.driver = driver;
-		super();
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(id="cname")
+	@FindBy(name="cname")
 	public WebElement customerName;
 	
-	@FindBy(id="age")
+	@FindBy(name="age")
 	public WebElement customerAge;
 	
-	@FindBy(id="address")
+	@FindBy(name="address")
 	public WebElement customerAddress;
 	
-	@FindBy(id="phonenumber")
+	@FindBy(name="phonenumber")
 	public WebElement customerPhNo;
 	
-	@FindBy(id="email")
+	@FindBy(name="email")
 	public WebElement customerEmail;
 	
 	@FindBy(id="submit")
@@ -35,6 +36,9 @@ public class CustomerRegistrationPageObj extends TestBaseSetup{
 	
 	@FindBy(id="reset")
 	public WebElement btnReset;
+	
+	@FindBy(id="//*[@id='message']")
+	public WebElement errorMsg;
 	
 	
 }

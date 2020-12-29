@@ -7,7 +7,7 @@
   <version>0.0.1-SNAPSHOT</version>
 	
 	<properties>
-		<cucumber.version>1.2.4</cucumber.version>
+		<cucumber.version>1.2.5</cucumber.version>
 	</properties>
 	
 	
@@ -23,6 +23,11 @@
 			<artifactId>cucumber-junit</artifactId>
 			<version>${cucumber.version}</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>com.google.inject</groupId>
+		    <artifactId>guice</artifactId>
+		    <version>2.0</version>
 		</dependency>
 		<dependency>
 			<groupId>info.cukes</groupId>
@@ -184,7 +189,14 @@
 			<artifactId>htmlunit-driver</artifactId>
 			<version>2.27</version>
 		</dependency>
-
+		<!-- https://mvnrepository.com/artifact/org.uncommons/reportng -->
+		<dependency>
+		    <groupId>org.uncommons</groupId>
+		    <artifactId>reportng</artifactId>
+		    <version>1.1.4</version>
+		    <scope>test</scope>
+		</dependency>
+		
 		<dependency>
 			<groupId>com.jcraft</groupId>
 			<artifactId>jzlib</artifactId>
@@ -217,12 +229,8 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.19.1</version>
 				<configuration>
-                    <!-- Suite testng xml file to consider for test execution -->
-                    <suiteXmlFiles>
-                        <suiteXmlFile>testng.xml</suiteXmlFile>
-                        <suiteXmlFile>suites-test-testng.xml</suiteXmlFile>
-                    </suiteXmlFiles>
-                </configuration>
+					<testFailIgnore>true</testFailIgnore>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

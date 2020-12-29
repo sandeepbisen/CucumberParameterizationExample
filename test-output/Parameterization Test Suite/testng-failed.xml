@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Parameterization Test Suite]">
-  <test thread-count="5" name="Testing Parameterization(failed)">
-    <parameter name="appURL" value="http://apps.qa2qe.cognizant.e-box.co.in/Cargo_Shipping_Cost"/>
-    <parameter name="browserType" value="chrome"/>
+<suite name="Failed suite [Parameterization Test Suite]">
+  <parameter name="appURL" value="http://apps.qa2qe.cognizant.e-box.co.in/Login_Servlet_3883/"/>
+  <parameter name="browserType" value="firefox"/>
+  <test name="Testing Parameterization(failed)">
+    <parameter name="appURL" value="http://apps.qa2qe.cognizant.e-box.co.in/Login_Servlet_3883/"/>
+    <parameter name="browserType" value="firefox"/>
     <classes>
-      <class name="testpakage.WebTestCustomer">
+      <class name="testpakage.LoginTest">
         <methods>
-          <include name="verifyTextForAir"/>
-          <include name="setUp"/>
-          <include name="verifyTextForRoad"/>
           <include name="tearDown"/>
-          <include name="verifyTextForShip"/>
+          <include name="setUp"/>
+          <include name="testLoginPage"/>
+          <include name="testMyProfile"/>
         </methods>
-      </class> <!-- testpakage.WebTestCustomer -->
+      </class> <!-- testpakage.LoginTest -->
     </classes>
   </test> <!-- Testing Parameterization(failed) -->
 </suite> <!-- Failed suite [Parameterization Test Suite] -->

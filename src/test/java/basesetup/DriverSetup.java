@@ -10,13 +10,14 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
 
-public class TestBaseSetup{
+public class DriverSetup{
 	
-	protected WebDriver driver;
-	public String appURL;
-	public String browserType;
+	public static WebDriver driver;
+	public static String appURL;
+	public static String browserType;
 	
-	public void setDriver() throws IOException
+	
+	public static WebDriver setDriver() throws IOException
 	{
 		ConfigReader configReader = new ConfigReader();
 		appURL = ConfigReader.getURL();
@@ -37,9 +38,10 @@ public class TestBaseSetup{
 					+ " is invalid, Launching Firefox as browser of choice..");
 			driver = initFirefoxDriver(appURL);
 		}
+		return driver;
 	}
 	
-	public WebDriver setDriverTestNG(String browserType, String appURL) throws IOException
+	public static WebDriver setDriverTestNG(String browserType, String appURL) throws IOException
 	{
 	 
 		switch (browserType) {
@@ -62,7 +64,7 @@ public class TestBaseSetup{
 		
 	}
 
-	public WebDriver initChromeDriver(String appURL) {
+	public static WebDriver initChromeDriver(String appURL) {
 		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 		capabilities.setCapability(CapabilityType.BROWSER_NAME, "Chrome");
 		System.out.println("Launching google chrome with new profile..");
@@ -74,7 +76,7 @@ public class TestBaseSetup{
 		return driver;
 	}
 
-	public WebDriver initFirefoxDriver(String appURL) {
+	public static WebDriver initFirefoxDriver(String appURL) {
 		System.out.println("Launching Firefox browser..");
 		System.setProperty("webdriver.gecko.driver","geckodriver.exe");
 		driver = new FirefoxDriver();
@@ -83,7 +85,7 @@ public class TestBaseSetup{
 		return driver;
 	}
 
-	public WebDriver initInternetExplorerDriver(String appURL) {
+	public static WebDriver initInternetExplorerDriver(String appURL) {
 		//it is used to define IE capability 
 		DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
 		capabilities.setCapability(CapabilityType.BROWSER_NAME, "IE");
@@ -98,11 +100,6 @@ public class TestBaseSetup{
 	public static void waitForPageToLoad() {
 
 	//	new WebDriverWait(driver, 240).until());
-	}
-	
-  @AfterClass
-	public void tearDown() {
-		driver.quit();
 	}
 
 }

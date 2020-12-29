@@ -5,11 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import basesetup.TestBaseSetup;
+import basesetup.DriverSetup;
 
-public class ShippingCostCalculationPageObj extends TestBaseSetup {
-
-
+public class ShippingCostCalculationPageObj extends DriverSetup {
+    
 	public ShippingCostCalculationPageObj(WebDriver driver) {
 	    this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -33,13 +32,14 @@ public class ShippingCostCalculationPageObj extends TestBaseSetup {
 	@FindBy(id="result")
 	public WebElement msgResult;
 	
-	@FindBy(id="lst-ib")
-	public WebElement boxSearch;
+	@FindBy(id="premium")
+	public WebElement chkPremium;
 	
+		
 	public void enterWaight(String inputValue)
 	{
-		boxSearch.sendKeys("Heello");
-		//txtWeight.sendKeys(inputValue);
+		txtWeight.clear();
+		txtWeight.sendKeys(inputValue);
 	}
 	
 	public void selectTransportMode(String transportMode)
@@ -61,8 +61,14 @@ public class ShippingCostCalculationPageObj extends TestBaseSetup {
 		
 	}
   
+	public void isPremium(String isPremiumCust)
+	{
+		if (isPremiumCust.equalsIgnoreCase("Yes"))
+		chkPremium.click();
+	}
+	
 	public void clickCalculate(){
-		btnCalculate.submit();
+		btnCalculate.click();
 	}
 	
 	public String getResult() {
